@@ -1,0 +1,89 @@
+<!--
+Add this meta field to your header section to set the viewport size same as device width:
+<meta name="viewport" content="width=device-width, initial-scale=1">
+-->
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="homestyle.css">
+</head>
+
+<!-- store all the information of title, instruction and modal box  -->
+<div class="game-container">
+  <h1 class="title">EE4216 Assignment 1 - JavaScript Card Game</h1>
+  <br>
+  <button type="button" class="button" id="instruction">Instruction</button>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      Instruction:
+      <ol>
+        <li>
+          Input a number of a multiple of 3, such as 3, 6, 9
+        </li>
+        <li>
+          This number is the total number of cards
+        </li>
+        <li>
+          You need to match three same cards to gain 1 score
+        </li>
+        <li>
+          If you mismatch three cards, score -1 except score is 0
+        </li>
+        <li>
+          Time limit will be number of pair(s) x 15 seconds
+        </li>
+        <li>
+          For example: 6 cards, two pairs of three cards
+        </li>
+        Time limit: 2 x 15 = 30 seconds
+      </ol>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- a form storing input container -->
+<form>
+  <!-- input constainer storing question, input box and warning massage -->
+  <div class="input-container">
+    <p class="input-label">Number of cards:</p>
+    <input type="text" class="input-value" placeholder="Please input any multiple of 3.." size="30" required="required">
+    <button type="button" class="button" id="submit_cardnum">Send</button>
+    <p id="warning-msg"></p>
+  </div>
+</form>
+
+
+<!-- info container storing score and time containers -->
+<div class="info-container">
+  <!-- score container storing label and score -->
+  <div class="score-container">
+    <p class="score-label">Score:</p>
+    <p class="score-value">0</p>
+  </div>
+
+  <!-- time container storing label and time -->
+  <div class="time-container">
+    <p class="time-label">Time:</p>
+    <p class="time-value">00:00</p>
+  </div>
+</div>
+
+<!-- card container storing a list of cards-->
+<div class="card-container">
+  <!-- Add a set of cards dynamically depending on user input -->
+</div>
+
+<!-- win block storing winning message -->
+<div class="win">
+  <span class="win-word win-1">YOU</span>
+  <span class="win-word win-2">WIN!</span>
+</div>
+</div>
+
+<script src='homescript.js'></script>

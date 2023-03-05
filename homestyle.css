@@ -1,0 +1,302 @@
+@import url(http://fonts.googleapis.com/css?family=Press+Start+2P);
+@import url(http://fonts.googleapis.com/css?family=Chakra+Petch);
+
+body {
+    background-image: url('https://img.freepik.com/free-vector/gradient-background-vector-spring-colors_53876-117271.jpg?w=1480&t=st=1677238415~exp=1677239015~hmac=a53c1a677c2cab8e99525dde8b459029f2c60288a73e1b454b116cbfd7f2e889');
+    background-blend-mode: lighten;
+}
+
+/* modal box */
+.modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* modal content */
+.modal-content {
+    font-family: "Optima";
+    font-size: large;
+    line-height: 1.5;
+    background-image: url('https://img.freepik.com/free-vector/gradient-background-vector-spring-colors_53876-117271.jpg?w=1480&t=st=1677238415~exp=1677239015~hmac=a53c1a677c2cab8e99525dde8b459029f2c60288a73e1b454b116cbfd7f2e889');
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: fit-content;
+    /* Could be more or less, depending on screen size */
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Hover close button */
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#warning-msg {
+    font-size: small;
+}
+
+.card {
+    position: relative;
+    width: 50px;
+    height: 70px;
+    border: 1px solid gray;
+    text-align: center;
+    font-size: 36px;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.card-face {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 70px;
+    transition: transform 500ms ease-in-out;
+    backface-visibility: hidden;
+
+}
+
+.card-back {
+    width: 50px;
+    height: 70px;
+    overflow: hidden;
+    transform: rotateY(0);
+}
+
+.card-front {
+    width: 50px;
+    height: 70px;
+    background-color: rgb(255, 225, 196);
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px lightblue;
+    border: 1px solid rgb(170, 39, 39);
+}
+
+.card.visible .card-back {
+    transform: rotateY(-180deg);
+}
+
+.card.visible .card-front {
+    transform: rotateY(0);
+    border: 1px solid rgb(40, 116, 209);
+}
+
+
+.info-container {
+    display: flex;
+}
+
+.card-container {
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 40px;
+    justify-content: center;
+    font-family: 'Press Start 2P';
+    text-align: center;
+}
+
+
+.title {
+    font-size: large;
+    font-family: 'Press Start 2P';
+    font-smooth: never;
+    -webkit-font-smoothing : none;
+}
+
+.instructions {
+    font-family: 'Chakra Petch';
+}
+
+.input-container {
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P';
+}
+
+#submit_cardnum {
+    margin-left: 4px;
+
+}
+
+.input-value {
+    margin-left: 6px;
+}
+
+#submit_cardnum {
+    justify-content: center;
+    align-items: center;
+}
+
+.score-container {
+    font-size: large;
+    font-family: 'Press Start 2P';
+    margin-left: 2px;
+    display: flex;
+}
+
+.time-container {
+    font-size: large;
+    font-family: 'Press Start 2P';
+    margin-left: auto;
+    margin-right: 2px;
+    display: flex;
+}
+
+
+.win {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P';
+}
+
+.win-word {
+    animation: color-animation 4s linear infinite;
+}
+
+.win-1 {
+    --color-1: #de7a44;
+    --color-2: #2886ae;
+    --color-3: #e89190;
+}
+
+.win-2 {
+    --color-1: #de9f18;
+    --color-2: #80b2ac;
+    --color-3: #17494D;
+}
+
+.win-word.win-2 {
+    margin-left: 10px;
+}
+
+@keyframes color-animation {
+    0% {
+        color: var(--color-1)
+    }
+
+    32% {
+        color: var(--color-1)
+    }
+
+    33% {
+        color: var(--color-2)
+    }
+
+    65% {
+        color: var(--color-2)
+    }
+
+    66% {
+        color: var(--color-3)
+    }
+
+    99% {
+        color: var(--color-3)
+    }
+
+    100% {
+        color: var(--color-1)
+    }
+}
+
+
+.button {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #1A1A1A;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: normal;
+    margin: 0;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+
+.button:disabled {
+    pointer-events: none;
+}
+
+.button:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.button:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+#instruction {
+    height: 30px;
+    width: 130px;
+    font-weight: 500;
+}
+
+@media (orientation: portrait) {
+    body {
+        flex-direction: column;
+    }
+
+    .input-container {
+        flex-wrap: wrap;
+    }
+}
