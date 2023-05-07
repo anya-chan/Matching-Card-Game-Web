@@ -30,5 +30,4 @@ and lose points for each incorrect guess.
 2. A timer that keeps track of the time elapsed and ends the game when a specified
 time limit is reached.
 
-![WhatsApp Image 2023-04-22 at 19 58 23](https://user-images.githubusercontent.com/111900986/233783392-e363af9c-703e-4ff6-9c96-ac44dbb58d32.jpeg)
 
